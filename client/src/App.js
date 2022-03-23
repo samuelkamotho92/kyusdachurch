@@ -1,16 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
-import Navbar from './Navbar';
-import Footer from './Footer';
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import Home from "./Home";
+import About from './About';
+import Contactus from './Contact';
 
 function App() {
   return (
     <div className="App">
-     <Navbar />
      <div className="content">
-       <h2>My Content</h2>
+       <Router>
+       <Routes>
+       <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contactus/>} />
+       </Routes>
+       </Router>
      </div>
-     <Footer />
     </div>
   );
 }
