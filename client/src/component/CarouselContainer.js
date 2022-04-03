@@ -5,20 +5,22 @@ import {Link} from "react-router-dom"
 import image1 from "../assets/image1.jpg"
 import image2 from "../assets/image2.jpg"
 import image3 from "../assets/image3.jpg"
-import { makeStyles } from '@material-ui/core';
-const useStyles = makeStyles({
+import { makeStyles } from '@material-ui/core/styles';
+const useStyles = makeStyles((theme) => ({
   btn:{
     padding:"10px",
-    fontSize:"20px",
+    color:"black",
     textDecoration:"none",
-    letterSpacing:"1px",
     textTransform:"uppercase",
-    backgroundColor:"violet",
+    fontSize:"18px",
+    fontWeight:"700",
+    textDecoration:"none",
+    backgroundColor:theme.palette.secondary.main,
     '&:hover':{
-         backgroundColor:'orange'
+         backgroundColor:' rgba(102, 255, 0, 0.986)'
     }
 }
-})
+}))
 
 const CarouselContainer = () => {
   const classes = useStyles();
