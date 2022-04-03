@@ -38,36 +38,28 @@
 }
 
 body{
-  height: 100%;
-
+  min-height: 100%;
+  position: relative;
 }
+
 .item{
   background-color: red;
 }
-/* .mainpage{
-  margin-bottom:20px;
+/* .homepage{
+position: "relative";
 } */
 img{
   height: 600px !important;
 }
-.footer{
-  background-color: orange;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
 .flexslider-caption {
-
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
 .flexslider-caption .btn{
-
   box-shadow: 0;
   transition: box-shadow ease-in-out 1s;
 }
 .flexslider-caption .btn :hover{
-
 box-shadow: 1 1 3px #515151;
 transform: scale(1.2,1.2);
 opacity:1;

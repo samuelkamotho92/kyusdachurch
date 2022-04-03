@@ -4,7 +4,6 @@ import Navbar from './Navbar';
 import Button from '@mui/material/Button';
 import { makeStyles } from '@material-ui/core';
 import TextField from '@mui/material/TextField';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
 import {useState} from "react"
 
 const useStyles = makeStyles({
@@ -74,8 +73,8 @@ if(name && email && message){
   SUBMIT
 </Button>
 </form>
+<Footer />
         </div>
-        <Footer />
         </div>
      
      );

@@ -2,7 +2,7 @@ import React from 'react'
 import Footer from './Footer';
 import Navbar from './Navbar';
 import CarouselContainer from "./component/CarouselContainer";
-// import Button from '@mui/material/Button';
+import  Dailydevotion from "./component/Devotion";
 import Upcoming from "./component/Upcoming";
 const Home = () => {
     return ( 
@@ -11,10 +11,11 @@ const Home = () => {
    <div className="mainpage">
    <CarouselContainer />
    <Upcoming />
+   <Dailydevotion />
+   <Footer />
    </div>
         {/* <Footer /> */}
         </div>
-     
      );
 }
  
