@@ -1,6 +1,6 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from '@material-ui/core';
 import { Link } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   footerpage: {
@@ -22,13 +22,19 @@ const useStyles = makeStyles((theme) => ({
                 color:"wheat",
          }
      }
+  },
+  tag:{
+      textAlign:"center",
+      fontSize:"32px",
+      backgroundColor:"#00ff00",
+      padding:"5px", 
   }
 }));
 
 const Footer = () => {
   const classes = useStyles();
   return (
-    <div className={classes.footerpage}>
+    <><div className={classes.footerpage}>
       <Grid container>
         <Grid item xs={12} md={4}>
           <ul className={classes.links}>
@@ -61,12 +67,14 @@ const Footer = () => {
               <img
                 src="images/whatsappicon.jpg"
                 alt="social"
-                style={{height:"30px",width:"40px"}}/>
+                style={{ height: "30px", width: "40px" }} />
             </a>
           </div>
         </Grid>
       </Grid>
-    </div>
+    </div><div className={classes.tag}>
+    <p>2022 © ALL RIGHT RESERVED</p>
+      </div></>
   );
 };
 
