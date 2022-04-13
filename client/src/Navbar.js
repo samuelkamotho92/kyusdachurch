@@ -9,7 +9,7 @@ import Toolbar from '@mui/material/Toolbar';
 // import MenuIcon from '@material-ui/icons/Menu';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
-// import MenuIcon from '@mui/icons-material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
 import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
@@ -55,12 +55,13 @@ const classes = useStyles();
             aria-label="menu"
             sx={{ mr: 2 }}
           >
-      KYUSDA
+            <MenuIcon /> KYUSDA
           </IconButton>
           <div className={classes.navlinks} >
           <Link to="/" color="inherit" className={classes.link}>Home</Link>
           <Link to="/about" color="inherit"  className={classes.link}>About</Link>
           <Link to="/Contact" color="inherit"  className={classes.link}>Contact Us</Link>
+          <Link to="/Post" color="inherit" className={classes.link}>Post</Link>
           </div>
         </Toolbar>
       </AppBar>
