@@ -62,6 +62,8 @@ const classes = useStyles();
           <Link to="/about" color="inherit"  className={classes.link}>About</Link>
           <Link to="/Contact" color="inherit"  className={classes.link}>Contact Us</Link>
           <Link to="/Post" color="inherit" className={classes.link}>Post</Link>
+          <Link to="/Login" color="inherit" className={classes.link}>Login</Link>
+          <Link to="/Signup" color="inherit" className={classes.link}>Sign up</Link>
           </div>
         </Toolbar>
       </AppBar>

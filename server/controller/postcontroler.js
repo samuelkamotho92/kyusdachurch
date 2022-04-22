@@ -1,4 +1,4 @@
-const postmodal = require("../Modal/postmodal");
+const postmodal = require("../Model/postmodal");
 
 
 const getPost = async(req,resp)=>{
