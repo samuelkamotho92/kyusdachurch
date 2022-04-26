@@ -2,7 +2,7 @@
 import TextField from '@mui/material/TextField';
 import { makeStyles } from '@material-ui/core';
 import Button from '@mui/material/Button';
-import AuthNavbar from './component/authNav';
+import AuthNavbar from './components/authNav';
 import {useState} from 'react';
 import React from 'react';
 
