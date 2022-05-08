@@ -1,7 +1,6 @@
 const authmodel  =  require("../Model/authmodel");
 const errorFunc = require("../utilities/errorHandling");
 const jwt = require("jsonwebtoken");
-
 //signup users
 
 let maxAge = 1*24*60*60;
@@ -22,7 +21,7 @@ const newmember =
  const tk = createJwt(newmember._id);
  console.log(tk);
  //cookie/localstorage to hold the token
- resp.cookie("kyusdauser",tk,{httpOnly:true,maxAge: maxAge* 1000});
+ resp.cookie(process.env.SECRET_KEY,tk,{httpOnly:true,maxAge: maxAge* 1000});
  
 resp.status(200).json({newmember})
 console.log(`Signed In ${req.body.message}`)
@@ -42,7 +41,7 @@ const loginmember = async (req,resp)=>{
         const loggedIn = await authmodel.login(email,password);
         const tk = createJwt(loggedIn._id);
         console.log(tk);
-        resp.cookie("kyusdauser",tk,{httpOnly:true,maxAge:maxAge*1000})
+        resp.cookie(process.env.SECRET_KEY,tk,{httpOnly:true,maxAge:maxAge*1000})
 resp.status(200).json({loggedIn})
 console.log(loggedIn)
     }catch(err){
