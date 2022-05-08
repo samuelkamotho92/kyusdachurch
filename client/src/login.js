@@ -1,3 +1,5 @@
+/* eslint-disable eqeqeq */
+/* eslint-disable no-restricted-globals */
 /* eslint-disable react-hooks/rules-of-hooks */
 import TextField from '@mui/material/TextField';
 import { makeStyles } from '@material-ui/core';
@@ -25,35 +27,39 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-const emailerror = document.querySelector(".emailerror");
-const  passworderror = document.querySelector(".passworderror");
+
 
 const loginPage = () => {
+     let emailerror = document.querySelector(".emailerror");
+    let  passworderror = document.querySelector(".passworderror");
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const classes = useStyles();
 const [email,setemail] = useState("");
 const [password,setpassword] = useState("");
 
-
         const handleSubmit = async (e)=>{
-          email.textContent = "";
-          passworderror.textContent = "";
+          e.preventDefault();
+             setemail("");
+             setpassword("");
           ///communicate with our backend
-     e.preventDefault();
+          emailerror.textContent = "";
+          passworderror.textContent = "";
      const response = await fetch(`http://localhost:5000/api/v1/login`,{
           method:"POST",
           headers:{"Content-Type":"application/json"},
-body:JSON.stringify({email,password})
+body:JSON.stringify({email,password}),
+credentials: 'include',
+withCredentials:true
      });
         const data = await  response.json();
         console.log(data);
-        if(data.loggedIn){
-          alert(`${data.loggedIn.email} logged in successfully`);
-     window.location = "/Home.js"
+        if(data.loggedIn && response.status == 200){
+          alert(`${data.loggedIn.email} logged in successfully `);
+          location.assign("/Post");
         }
         if(data.errormess){
-          emailerror.textContent = data.errormess.email
-          passworderror.textContent = data.errormess.password
+          emailerror.textContent = data.errormess.email;
+          passworderror.textContent = data.errormess.password;
       }
                  }
     return (  
@@ -64,19 +70,19 @@ body:JSON.stringify({email,password})
  required style={{margin:"20px 0px"}} value={email}  onChange={(e)=>{
      setemail(e.target.value)
 }}/>
-<div className='emailerror'></div>
+<div className='emailerror' style={{color:"red"}}></div>
  <TextField type="password"  className={classes.fieldValue} id="password" label="password" variant="outlined"
  required style={{margin:"20px 0px"}} value={password}  onChange={(e)=>{
      setpassword(e.target.value)
 }}/>
-<div className='passworderror'></div>
+<div className='passworderror' style={{color:"red"}}></div>
 <div></div>
 
 <Button  style={{margin:"10px 0px"}}
  type="submit"
  variant="outlined"
  size="large" className={classes.btn}>
-  SIGNUP
+LOGIN
 </Button>
 </form>
         </div>

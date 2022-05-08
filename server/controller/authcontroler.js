@@ -20,27 +20,35 @@ const {name,email,password,passwordconfirm} = req.body;
 const newmember =
  await authmodel.create({name,email,password,passwordconfirm})
  const tk = createJwt(newmember._id);
+ console.log(tk);
  //cookie/localstorage to hold the token
  resp.cookie("kyusdauser",tk,{httpOnly:true,maxAge: maxAge* 1000});
+ 
 resp.status(200).json({newmember})
+console.log(`Signed In ${req.body.message}`)
     }catch(err){
         const errormess = errorFunc(err);
         resp.status(401).json({errormess})
+        console.log(errormess)
     }
 if(req.body.status === "success"){
 console.log(`Signed In ${req.body.message}`)
 }
 }
 const loginmember = async (req,resp)=>{
-    const {email,password} = req.body
-    const loggedIn = await authmodel.login(email,password);
-    const tk = createJwt(loggedIn._id);
-    resp.cookie("loggedIn",tk,{httpOnly:true,maxAge:maxAge*1000})
     try{
+        const {email,password} = req.body
+        console.log(email,password)
+        const loggedIn = await authmodel.login(email,password);
+        const tk = createJwt(loggedIn._id);
+        console.log(tk);
+        resp.cookie("kyusdauser",tk,{httpOnly:true,maxAge:maxAge*1000})
 resp.status(200).json({loggedIn})
+console.log(loggedIn)
     }catch(err){
         const errormess = errorFunc(err);
-        resp.status(404).json({errormess})
+        resp.status(401).json({errormess})
+        console.log(errormess.email,errormess.password);
     }
     if(req.body.status === "success"){
         console.log(`LOGGED IN AS ${req.body.message}`)

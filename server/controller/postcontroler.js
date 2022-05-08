@@ -2,18 +2,19 @@ const postmodal = require("../Model/postmodal");
 
 
 const getPost = async(req,resp)=>{
-    try{
-const messages = await postmodal.find();
-resp.status(200).json({
-    status:"success",
-    message:messages
-})
-    }catch(err){
-resp.status(404).json({
-    status:"fail",
-    message:err.message
-})
-    }
+//     try{
+// const messages = await postmodal.find();
+// resp.status(200).json({
+//     status:"success",
+//     message:messages
+// })
+//     }catch(err){
+// resp.status(404).json({
+//     status:"fail",
+//     message:err.message
+// })
+//     }
+console.log("working fine")
 };
 const createpost = async(req,resp)=>{    
     try{

@@ -10,7 +10,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import image1 from "./assets/missionvision.jpg";
 import image2 from "./assets/ourvision.jpg";
-import Leader from "./component/leaders";
+import Leader from "./components/leaders";
 
 
 const useStyles = makeStyles((theme) => ({

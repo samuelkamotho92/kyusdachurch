@@ -6,6 +6,7 @@ import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import { makeStyles } from '@material-ui/core';
 
+
 const useStyles = makeStyles((theme) => ({
     root:{
       display: "flex",
@@ -57,6 +58,7 @@ const classes = useStyles();
           <div className={classes.navlinks} >
         <Link to="/login" color="inherit" className={classes.link}>Login</Link>
         <Link to="/Signup" color="inherit" className={classes.link}>Sign Up</Link>
+        <Link to="/newmember" color="inherit" className={classes.link}>Church Registration</Link>
           </div>
         </Toolbar>
       </AppBar>

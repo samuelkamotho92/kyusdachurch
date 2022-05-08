@@ -5,6 +5,6 @@ const postrouter = express.Router();
 postrouter.route("/")
 .get(postcontrollers.getPost);
 postrouter.route("/send")
-.get(postcontrollers.createpost);
+.post(postcontrollers.createpost);
 
 module.exports = postrouter;

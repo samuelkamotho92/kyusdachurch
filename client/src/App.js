@@ -5,7 +5,8 @@ import About from './About';
 import Contactus from './Contact';
 import Login from "./login";
 import Signup from "./signup";
-import Post from "./component/Posts/postfront";
+import Post from "./components/Posts/postfront";
+import Regester from './Member';
 function App() {
   return (
     <div className="App">
@@ -18,6 +19,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/post" element={<Post />} />
+        <Route path="/newmember" element={<Regester />}/>
        </Routes>
        </Router>
      </div>

@@ -1,9 +1,9 @@
 import React from 'react'
 import Footer from './Footer';
 import Navbar from './Navbar';
-import CarouselContainer from "./component/CarouselContainer";
-import  Dailydevotion from "./component/Devotion";
-import Upcoming from "./component/Upcoming";
+import CarouselContainer from "./components/CarouselContainer";
+import  Dailydevotion from "./components/Devotion";
+import Upcoming from "./components/Upcoming";
 const Home = () => {
     return ( 
         <div className="homepage">

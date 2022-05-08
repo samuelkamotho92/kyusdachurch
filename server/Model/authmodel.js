@@ -48,17 +48,17 @@ authSchema.pre("save",async function(next){
 })
 
 //login user method which acts as prehook 
-authSchema.static.login = async function(email,password){
-    const member = await this.findOne(email);
+authSchema.statics.login = async function(email,password){
+    const member = await this.findOne({email});
     if(member){
         //compare password
     const authmember = await bcrypt.compare(password,member.password);
     if(authmember){
         return member
     }
-        throw new Error("incorrect password")
+        throw Error("incorrect password")
     }
-        throw new Error("incorrect email");
+        throw  Error("incorrect email");
 }
 
 const authmodel = mongoose.model("user",authSchema);
