@@ -67,7 +67,8 @@ withCredentials:true
             <AuthNavbar />
             <form autoComplete="off" className={classes.contactForm} onSubmit={handleSubmit}>
  <TextField type="text" className={classes.fieldValue} id="email" label="email" variant="outlined"
- required style={{margin:"20px 0px"}} value={email}  onChange={(e)=>{
+ required style={{margin:"20px 0px"}} value={email}
+   onChange={(e)=>{
      setemail(e.target.value)
 }}/>
 <div className='emailerror' style={{color:"red"}}></div>

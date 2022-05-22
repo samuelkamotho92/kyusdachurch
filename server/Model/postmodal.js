@@ -6,21 +6,17 @@ const postSchema = new Schema({
         type:String,
         required:true,
     },
-    content:{
+    comment:{
         type:String,
         required:true,
     },
-    author:{
+    tags:{
         type:String,
         required:true
     },
-    likecount:{
-        type:Number,
-        default:0
-    },
-    createdAt:{
-        type:Date,
-        default:new Date()
+    selectedFile:{
+        type:String,
+        required:true
     }
 })
 const Post = mongoose.model("post",postSchema);

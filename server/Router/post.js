@@ -4,7 +4,7 @@ const postrouter = express.Router();
 
 postrouter.route("/")
 .get(postcontrollers.getPost);
-postrouter.route("/send")
+postrouter.route("/")
 .post(postcontrollers.createpost);
 
 module.exports = postrouter;

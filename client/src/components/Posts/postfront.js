@@ -7,7 +7,6 @@ import useStyles from "./Post/style";
 import Authnavbar from "../authNav";
 const Comments = () => {
     const classes = useStyles();
-
     return ( 
     <div className="lessondisc">
             <Authnavbar />

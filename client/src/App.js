@@ -7,7 +7,15 @@ import Login from "./login";
 import Signup from "./signup";
 import Post from "./components/Posts/postfront";
 import Regester from './Member';
+import {getPost} from './actions/post';
+import {useEffect} from 'react'
+import {useDispatch} from 'react-redux';
 function App() {
+  const dispatch = useDispatch();
+ useEffect(()=>{
+dispatch(getPost())
+ },[dispatch])
+
   return (
     <div className="App">
      <div className="content">
